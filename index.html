@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discord Profile Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #36393f;
+            font-family: 'Arial', sans-serif;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-image: url('https://64.media.tumblr.com/978b0566d0f4f1f7ee9c0bb22a800281/tumblr_n0vuy0aMhQ1rpdptuo1_500.gifv'); /* GIF URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         .card {
-            background-color: #2f3136;
+            background-color: rgba(47, 49, 54, 0.8); /* Slightly transparent to blend with background */
             border-radius: 10px;
             width: 300px;
             text-align: center;
@@ -37,6 +41,7 @@
         .card-header h2 {
             margin: 10px 0;
             font-size: 20px;
+            font-family: 'Arial', sans-serif; /* Ensure proper font rendering */
         }
         .card-body {
             padding: 20px;
@@ -45,6 +50,14 @@
             margin: 10px 0;
             font-size: 14px;
             color: #b9bbbe;
+        }
+        .discord-tag {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700; /* Bold font weight */
+        }
+        .role, .status {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Regular font weight */
         }
         .card-footer {
             background-color: #2f3136;
@@ -57,23 +70,53 @@
             color: #7289da;
             text-decoration: none;
         }
+        .copy-icon {
+            width: 16px;
+            height: 16px;
+            margin-left: 5px;
+            cursor: pointer;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
     <div class="card">
         <div class="card-header">
-            <img src="https://via.placeholder.com/80" alt="Profile Picture">
-            <h2>Your Name</h2>
+            <img src="https://media.discordapp.net/attachments/1259311133618081806/1278518842758533221/IMG_0599.png?ex=66d118f5&is=66cfc775&hm=e0fc3817abe11b85f842bed823bb5c0c55e1b63cbd72352fb4b1c2ddc292da69&=&format=webp&quality=lossless&width=624&height=500" alt="Profile Picture">
+            <h2>𝑽𝑬𝑿𝑿𝑬𝑫</h2>
         </div>
         <div class="card-body">
-            <p>Discord Tag: #0000</p>
-            <p>Role: Your Role</p>
-            <p>Status: Online</p>
+            <p>Discord Tag: <span id="discord-tag" class="discord-tag">redamenced</span><svg class="copy-icon" xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#e8eaed" onclick="copyTag()"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg></p>
+            <p class="role">Role: Your Role</p>
+            <p class="status">Status: Online</p>
         </div>
         <div class="card-footer">
-            <a href="https://yourwebsite.com" target="_blank">Website</a> | 
-            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+            <a href="https://www.roblox.com/users/2787839475/profile" target="_blank">Roblox</a> | 
+            <a href="https://www.tiktok.com/@vexxspex" target="_blank">TikTok</a>
         </div>
     </div>
+
+    <audio autoplay>
+        <source src="https://github.com/8msv/discord-card-profile/raw/main/spotifydown.com%20-%20K-SLIDE.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        function copyTag() {
+            // Get the text from the span element
+            const tag = document.getElementById('discord-tag').textContent;
+            
+            // Create a temporary textarea element to copy the text
+            const textarea = document.createElement('textarea');
+            textarea.value = tag;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Optionally, you can show an alert or change the icon to indicate the text has been copied
+            alert('Discord tag copied to clipboard!');
+        }
+    </script>
 </body>
 </html>
