@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #36393f;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #2f3136;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .card-header {
+            background-color: #7289da;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            padding: 20px;
+        }
+        .card-header img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .card-header h2 {
+            margin: 10px 0;
+            font-size: 20px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+        .card-body p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #b9bbbe;
+        }
+        .card-footer {
+            background-color: #2f3136;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 10px;
+            font-size: 12px;
+        }
+        .card-footer a {
+            color: #7289da;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="card-header">
+            <img src="https://via.placeholder.com/80" alt="Profile Picture">
+            <h2>Your Name</h2>
+        </div>
+        <div class="card-body">
+            <p>Discord Tag: #0000</p>
+            <p>Role: Your Role</p>
+            <p>Status: Online</p>
+        </div>
+        <div class="card-footer">
+            <a href="https://yourwebsite.com" target="_blank">Website</a> | 
+            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        </div>
+    </div>
+</body>
+</html>
